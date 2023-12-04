@@ -1,14 +1,16 @@
-# RegExpress
+# RegExus
+
+Port of [`regexpbuilderphp`](https://github.com/gherkins/regexpbuilderphp)
 
 Install the library using npm:
 
 ```bash
-npm install regexpress
+npm install regexus
 ```
 ## Usage
 
 ```typescript
-import { RegExpBuilder } from 'regexpress';
+import { RegExpBuilder } from 'regexus';
 
 const builder = new RegExpBuilder()
   .startOfInput()
@@ -26,3 +28,11 @@ if (regExp.test(testString)) {
   console.log('No match found.');
 }
 ```
+
+## API Reference
+
+...
+
+## Contributing
+ 
+...

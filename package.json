@@ -1,5 +1,5 @@
 {
-  "name": "regexpress",
+  "name": "regexus",
   "version": "0.0.1",
   "description": "Craft Regex with ease",
   "main": "dist",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlenVelocity/RegExpress.git"
+    "url": "git+https://github.com/AlenVelocity/RegExus.git"
   },
   "keywords": [
     "regex",
@@ -28,9 +28,9 @@
   "author": "Alen Yohannan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AlenVelocity/RegExpress/issues"
+    "url": "https://github.com/AlenVelocity/RegExus/issues"
   },
-  "homepage": "https://github.com/AlenVelocity/RegExpress#readme",
+  "homepage": "https://github.com/AlenVelocity/RegExus#readme",
   "devDependencies": {
     "@types/jest": "^29.5.10",
     "@typescript-eslint/eslint-plugin": "^6.13.1",
