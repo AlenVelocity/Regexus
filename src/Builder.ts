@@ -81,7 +81,11 @@ class RegExpBuilder {
           return '';
       }
     }
-    
+
+    /** 
+     * Returns the literal representation of the RegExp
+     * @returns {string}
+    */
     public getLiteral(): string {
         this.flushState()
         return this._literal.join('')
@@ -103,6 +107,10 @@ class RegExpBuilder {
         return literal
     }
 
+    /** 
+     * Returns the usable RegExp
+     * @returns {RegExp}
+    */
     public getRegExp(): RegExp {
         this.flushState()
         return new RegExp(this._literal.join(''), this._flags)
@@ -119,35 +127,64 @@ class RegExpBuilder {
         return this.addFlag('i')
     }
 
+    /**
+     * Makes the RegExp match across multiple lines
+     * @returns {RegExpBuilder}
+     */
     public multiLine(): RegExpBuilder {
         return this.addFlag('m')
     }
 
+    /**
+     * Enables global matching of the RegExp
+     * @returns {RegExpBuilder}
+     */
     public globalMatch(): RegExpBuilder {
         return this.addFlag('g')
     }
 
+    /**
+     * Starts the RegExp matching at the beginning of the input
+     * @returns {RegExpBuilder}
+     */
     public startOfInput(): RegExpBuilder {
         this._literal.push('(?:^)')
         return this
     }
 
+    /**
+     * Starts the RegExp matching at the beginning of the line
+     * @returns {RegExpBuilder}
+     */
     public startOfLine(): RegExpBuilder {
         this.multiLine()
         return this.startOfInput()
     }
 
+    /**
+     * Ends the RegExp matching at the end of the input
+     * @returns {RegExpBuilder}
+     */
     public endOfInput(): RegExpBuilder {
         this.flushState()
         this._literal.push('(?:$)')
         return this
     }
 
+    /**
+     * Ends the RegExp matching at the end of the line
+     * @returns {RegExpBuilder}
+     */
     public endOfLine(): RegExpBuilder {
         this.multiLine()
         return this.endOfInput()
     }
 
+    /**
+     * Matches the input string against the RegExp
+     * @param {string} input
+     * @returns {boolean}
+     */
     public eitherFind(r: string | RegExpBuilder): RegExpBuilder {
         if (typeof r === 'string') {
             return this.setEither(this.getNew().exactly(1).of(r))
@@ -161,6 +198,7 @@ class RegExpBuilder {
         return this
     }
 
+    
     public orFind(r: string | RegExpBuilder): RegExpBuilder {
         if (typeof r === 'string') {
             return this.setOr(this.getNew().exactly(1).of(r))
