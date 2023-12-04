@@ -64,28 +64,28 @@ class RegExpBuilder {
     }
 
     private getCharacterLiteral(): string {
-      switch (true) {
-        case this._of !== '':
-          return this._of;
-        case this._ofAny:
-          return '.';
-        case this._ofGroup > 0:
-          return `\\${this._ofGroup}`;
-        case this._from !== '':
-          return `[${this._from}]`;
-        case this._notFrom !== '':
-          return `[^${this._notFrom}]`;
-        case this._like !== null:
-          return this._like as string;
-        default:
-          return '';
-      }
+        switch (true) {
+            case this._of !== '':
+                return this._of
+            case this._ofAny:
+                return '.'
+            case this._ofGroup > 0:
+                return `\\${this._ofGroup}`
+            case this._from !== '':
+                return `[${this._from}]`
+            case this._notFrom !== '':
+                return `[^${this._notFrom}]`
+            case this._like !== null:
+                return this._like as string
+            default:
+                return ''
+        }
     }
 
-    /** 
+    /**
      * Returns the literal representation of the RegExp
      * @returns {string}
-    */
+     */
     public getLiteral(): string {
         this.flushState()
         return this._literal.join('')
@@ -107,10 +107,10 @@ class RegExpBuilder {
         return literal
     }
 
-    /** 
+    /**
      * Returns the usable RegExp
      * @returns {RegExp}
-    */
+     */
     public getRegExp(): RegExp {
         this.flushState()
         return new RegExp(this._literal.join(''), this._flags)
@@ -198,7 +198,6 @@ class RegExpBuilder {
         return this
     }
 
-    
     public orFind(r: string | RegExpBuilder): RegExpBuilder {
         if (typeof r === 'string') {
             return this.setOr(this.getNew().exactly(1).of(r))
