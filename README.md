@@ -1,17 +1,32 @@
 # RegExus
 
+Human Readable Regular Expressions for JS/TS
+
 Port of [`regexpbuilderphp`](https://github.com/gherkins/regexpbuilderphp)
 
-Install the library using npm:
+
+## Usage
+
+### via NPM
 
 ```bash
 npm install regexus
 ```
-## Usage
 
 ```typescript
-import { RegExpBuilder } from 'regexus';
+import { RegExpBuilder } from 'regexus'; // esm
+// or
+const { RegExpBuilder } = require('regexus'); // commonjs
+```
 
+### via CDN
+```html
+<script src="https://cdn.jsdelivr.net/npm/regexus@0.0.2/dist/regexus.umd.js"></script>
+```
+
+### Example
+
+```typescript
 const builder = new RegExpBuilder()
   .startOfInput()
   .exactly(3).digits()
@@ -31,8 +46,8 @@ if (regExp.test(testString)) {
 
 ## API Reference
 
-...
+Coming soon
 
 ## Contributing
  
-...
+Contributions are welcome! Please open a pull request or an issue if you would like to contribute. 

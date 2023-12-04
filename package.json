@@ -1,7 +1,7 @@
 {
   "name": "regexus",
   "version": "0.0.1",
-  "description": "Craft Regex with ease",
+  "description": "Human Readable Regular Expressions",
   "main": "dist",
   "types": "dist",
   "files": [
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "tsc -p .",
+    "build": "vite build && tsc -p .",
     "lint": "eslint \"src/**/*.ts\"",
     "prepublish": "npm run build",
     "fmt": "prettier --config .prettierrc \"**/*.{ts,mjs}\" --write",
@@ -37,7 +37,10 @@
     "eslint": "^8.55.0",
     "jest": "^29.7.0",
     "prettier": "^3.1.0",
+    "rollup-plugin-friendly-type-imports": "^1.0.3",
     "ts-jest": "^29.1.1",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "vite": "^5.0.5",
+    "vite-plugin-banner": "^0.7.1"
   }
 }
