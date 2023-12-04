@@ -13,8 +13,7 @@
     "lint": "eslint \"src/**/*.ts\"",
     "prepublish": "npm run build",
     "fmt": "prettier --config .prettierrc \"**/*.{ts,mjs}\" --write",
-    "release": "release-it",
-    "examples": "ts-node ./examples/index.ts"
+    "test": "ts-jest"
   },
   "repository": {
     "type": "git",
