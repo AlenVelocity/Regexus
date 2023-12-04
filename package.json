@@ -2,7 +2,11 @@
   "name": "regexpress",
   "version": "0.0.1",
   "description": "Craft Regex with ease",
-  "main": "dist/index.js",
+  "main": "dist",
+  "types": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc -p .",
